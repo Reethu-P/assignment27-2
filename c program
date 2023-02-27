@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int num, digit, sum;
+
+    // Read input number from user
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Calculate sum of digits until it becomes a single digit
+    while (num > 9) {
+        sum = 0;
+
+        // Calculate sum of digits of the current number
+        while (num > 0) {
+            digit = num % 10;
+            sum += digit;
+            num /= 10;
+        }
+
+        num = sum;
+    }
+
+    // Print the final sum of digits
+    printf("The sum of digits until it becomes a single digit is: %d\n", num);
+
+    return 0;
+}
